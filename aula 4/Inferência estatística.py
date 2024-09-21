@@ -20,8 +20,8 @@ asyncr = np.array([77.1,71.7,91,72.2,74.8,85.1,67.6,69.9,75.3,71.7,65.7,72.6,71.
 # Obtemos o p-valor como resultado do teste de Shapiro.Importante para indicar um intervalo de confiança.
 # Esse intervalo pode ser variado, mas é utilizado um valor de 95% na maioria dos casos, onde o p-valor será de 0,05(5%). Esse será seu limite (faixa de erro).
 
-#Se o p-valor for menor que o limite (0,05), então a hipótese nula é rejeitada, o que implica em assumir a hipótese H1, onde a distribuição foge da normalidade.
-#Se o p-valor for maior que o limite, então a hipótese nula não pode ser rejeitada.
+# Se o p-valor for menor que o limite (0,05), então a hipótese nula é rejeitada, o que implica em assumir a hipótese H1, onde a distribuição foge da normalidade.
+# Se o p-valor for maior que o limite, então a hipótese nula não pode ser rejeitada.
 
 
 #Teste de Shapiro-Wilk para o conjunto síncrono
@@ -38,7 +38,7 @@ print(f"P-value do conjunto assíncrono {round(pvalueAsyncr,3)}\n") # resultado:
 #Se considerarmos a hipótese alternativa(H1, onde a distribuição é anormal), podemos utilizar o teste de assimetria para constatar com maior veracidade a normalidade da distribuição: 
 
 
-#TESTE DE ASSIMETRIA
+# TESTE DE ASSIMETRIA
 
 # Se o resultado do teste for:
 # Igual ou muito próximo a 0, temos uma distribuição simétrica

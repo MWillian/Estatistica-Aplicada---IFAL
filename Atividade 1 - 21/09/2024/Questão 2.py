@@ -9,7 +9,6 @@ irisSetosa = iris[iris['Species'] == 'Iris-setosa']
 irisVersicolor = iris[iris['Species'] == 'Iris-versicolor']
 irisVirginica = iris[iris['Species'] == 'Iris-virginica']
 
-
 setosaSepalWidth = irisSetosa['SepalWidthCm']
 versicolorSepalWidth = irisVersicolor['SepalWidthCm']
 virginicaSepalWidth = irisVirginica['SepalWidthCm']
