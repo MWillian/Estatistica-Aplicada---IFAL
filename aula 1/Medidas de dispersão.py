@@ -1,6 +1,11 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.dates as mdates
+import scipy.stats as stts
 
-# A biblioteca Numpy(Numerical Python) faz o manejo de matrizes, cálculo e fornece um grande conjunto de funções e operações numéricas.
+# A biblioteca Numpy(Numerical Python) faz o manejo e cálculo de matrizes, e fornece um grande conjunto de funções e operações numéricas.
 # A biblioteca statistics é uma biblioteca Python integrada que fornece funções para calcular estatísticas matemáticas de dados numéricos.
  
 # Duas bases de dados que serão utilizadas para realizar as análises estatísticas
@@ -33,15 +38,11 @@ Q3Asyncr = np.percentile(asyncr,75)
 print(f"Terceiro quartil do conjunto assíncrono: {Q3Asyncr}")
 print()
 
-#------------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------------
-
-
 
 # Amplitude (é dada por R = Xmáx - Xmin)
 
-print(f"Amplitude sync: {sync.ptp()}")
-print(f"Amplitude async: {asyncr.ptp()}")
+print(f"Amplitude sync: {np.ptp(sync)}")
+print(f"Amplitude async: {np.ptp(asyncr)}")
 print()
 
 #Amplitude interquartil (dada pela diferença: Q3-Q1)
@@ -49,7 +50,6 @@ print()
 print(f"Intervalo interquartil do conjunto sync: {Q3Sync-Q1Sync}")
 print(f"Intervalo interquartil do conjunto asyncr: {Q3Asyncr-Q1Asyncr}")
 print()
-
 
 #Variância
 
