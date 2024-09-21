@@ -2,7 +2,7 @@ import pandas as pd
 import seaborn as sns
 import scipy
 
-#Qual das espéccies tem a maior média de comprimento de pétala ?
+#Qual das espécies tem a maior média de comprimento de pétala ?
 
 iris = pd.read_csv('Atividade estatística\Iris.csv')
 
