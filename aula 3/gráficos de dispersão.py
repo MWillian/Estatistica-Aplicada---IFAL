@@ -14,13 +14,13 @@ stock = pd.read_csv('aula 3\stock_data.csv')
 
 
 # Alterando o formato de apresentação do eixo x para DATE_TIME internacional no modelo ano/mês/dia (esse passo é importante para melhor visualização dos dados do conjunto de dados)
-stock['Date'] = pd.to_datetime(stock['Date'])
-print(stock.head())
+# stock['Date'] = pd.to_datetime(stock['Date'])
+# print(stock.head())
 
-# Plotando os dois gráficos sobrepostos para avaliar a variabilidade das duas medidas
-sns.lineplot(data=stock,x='Date',y='High')
-sns.lineplot(data=stock,x='Date',y='Low')
-plt.show()
+# # Plotando os dois gráficos sobrepostos para avaliar a variabilidade das duas medidas
+# sns.lineplot(data=stock,x='Date',y='High')
+# sns.lineplot(data=stock,x='Date',y='Low')
+# plt.show()
 
 
 #GRÁFICOS DE DISPERSÃO
@@ -41,7 +41,7 @@ y_SepalWidth = iris['SepalWidthCm']
 # Esse teste não exige a suposição de que a relação entre as variáveis é linear, nem composta de dados quantitativos.
 # Pode ser utilizado para verificar relação entre variáveis medidas no nível ordinal.
 
-print(stts.spearmanr(x_SepalLength,y_SepalWidth)) #coeficiente de correlação
+# print(stts.spearmanr(x_SepalLength,y_SepalWidth)) #coeficiente de correlação
 
 
 # Teste paramétrico de Pearson,deve ser utilizado somente para os conjuntos de distribuição normal.
@@ -57,7 +57,8 @@ print(stts.pearsonr(x_SepalLength,y_SepalWidth)) #coeficiente de correlação
 
 
 # Plotagem do gráfico Scatterplot, para análisar a correlação entre duas variáveis e sua dispersão
-sns.scatterplot(data=iris,x = iris['SepalLengthCm'],y = iris['SepalWidthCm']) # Aqui é analisado o comprimeito da sépala e largura da sépala em todas as espécies de plantas.
+# sns.scatterplot(data=iris,x = iris['SepalLengthCm'],y = iris['SepalWidthCm']) # Aqui é analisado o comprimeito da sépala e largura da sépala em todas as espécies de plantas.
+# plt.show()
 
 
 # Na plotagem, temos uma correlação forte positiva quando o coeficiente de correlação for próximo de 1, e forte negativa quando for próximo de -1.
@@ -67,8 +68,8 @@ sns.scatterplot(data=iris,x = iris['SepalLengthCm'],y = iris['SepalWidthCm']) # 
 
 # Plotando o gráfico boxplot das 2 colunas
 # Em resumo, o gráfico boxplot é muito utilizado para verificar a dispersão do conjunto de dados, a presença de outliers e a localização dos quartis na distribuição.
-sns.boxplot([x_SepalLength,y_SepalWidth])
-plt.show()
+# sns.boxplot([x_SepalLength,y_SepalWidth])
+# plt.show()
 
 
 #Filtragem do nome de espécie 
@@ -107,6 +108,11 @@ virginicaPetalWidth = irisVirginica['PetalWidthCm']
 # Plot do gráfico scatterplot para a espécie Iris Setosa
 
 sns.scatterplot(data=irisSetosa,x=setosaSepalLength,y=setosaSepalWidth)
+sns.scatterplot(data=irisVersicolor,x=versicolorSepalLength,y=versicolorSepalWidth)
+sns.scatterplot(data=irisVirginica,x=virginicaSepalLength,y=virginicaSepalWidth)
+plt.show()
+
+
 sns.scatterplot(data=irisSetosa,x=setosaSepalLength,y=setosaPetalWidth)
 sns.scatterplot(data=irisSetosa,x=setosaPetalLength,y=setosaPetalWidth)
 sns.scatterplot(data=irisSetosa,x=setosaPetalLength,y=setosaSepalWidth)
