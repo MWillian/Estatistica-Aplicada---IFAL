@@ -1,15 +1,15 @@
 import pandas as pd
+import scipy
 import scipy.stats as stts
 import seaborn as sns
-import scipy
 import matplotlib.pyplot as plt
 
 # Há uma correlação significativa entre o comprimento da sépala e o comprimento da pétala ?
 
 
-iris = pd.read_csv('Atividade 1 - 21/09/2024/Iris.csv')
+iris = pd.read_csv('Iris.csv')
 
-# Filtro das colunas das espécies
+# Filtro das colunas das espéciespip sh
 
 irisSetosa = iris[iris['Species'] == 'Iris-setosa']
 irisVersicolor = iris[iris['Species'] == 'Iris-versicolor']
@@ -57,39 +57,45 @@ corr,p = stts.pearsonr(versicolorPetalLength,versicolorSepalLength)
 print(f"Coeficiente de correlação para Iris-Versicolor: {corr}")
 
 corr,p = stts.pearsonr(virginicaPetalLength,virginicaSepalLength)
-print(f"Coeficiente de correlação para Iris-Virginica: {corr}")
+print(f"Coeficiente de correlação para Iris-Virginica: {corr}\n")
 
 
-# Para confirmar a correlação
+# Para confirmar a correlação, fazemos o plot do gráfico Scatterplot
 
 # Gráfico de correlação para a espécie Setosa
 
-# sns.scatterplot(data=irisSetosa,x = irisSetosa['SepalLengthCm'],y = irisSetosa['PetalLengthCm'])
-# plt.show()
-# #gráfico de correlação para a espécie Versicolor
-# sns.scatterplot(data=irisVersicolor,x = irisVersicolor['SepalLengthCm'],y = irisVersicolor['PetalLengthCm'])
-# plt.show()
-# #gráfico de correlação para a espécie Virginica
-# sns.scatterplot(data=irisVirginica,x = irisVirginica['SepalLengthCm'],y = irisVirginica['PetalLengthCm'])
-# plt.show()
+sns.scatterplot(data=irisSetosa,x = irisSetosa['SepalLengthCm'],y = irisSetosa['PetalLengthCm'])# indica uma correlação fraca positiva (0.26)
+plt.show() 
 
+#gráfico de correlação para a espécie Versicolor
+sns.scatterplot(data=irisVersicolor,x = irisVersicolor['SepalLengthCm'],y = irisVersicolor['PetalLengthCm'])# indica uma correlação forte positiva (0.75)
+plt.show()
 
-#drop para deixar somente as colunas para análise da correlação
+#gráfico de correlação para a espécie Virginica
+sns.scatterplot(data=irisVirginica,x = irisVirginica['SepalLengthCm'],y = irisVirginica['PetalLengthCm'])# indica uma correlação forte positiva (0.86)
+plt.show()
 
-# irisSetosa = irisSetosa.drop(columns=['Id','Species','SepalWidthCm','PetalWidthCm'])
+# Também podemos utilizar a ferramenta HeatMap para uma melhor visualização dos índices de correlação das espécies.
 
-# irisVersicolor = irisVersicolor.drop(columns=['Id','Species','SepalWidthCm','PetalWidthCm'])
+# Drop para deixar somente as colunas para análise da correlação
 
-# irisVirginica = irisVirginica.drop(columns=['Id','Species','SepalWidthCm','PetalWidthCm'])
+irisSetosa = irisSetosa.drop(columns=['Id','Species','SepalWidthCm','PetalWidthCm'])
 
-# #atribuição das variáveis para a matrix da correlação
-# corrSetosa = irisSetosa.corr()
-# corrVersicolor = irisVersicolor.corr()
-# corrVirginica = irisVirginica.corr()
+irisVersicolor = irisVersicolor.drop(columns=['Id','Species','SepalWidthCm','PetalWidthCm'])
 
-# sns.heatmap(corrSetosa,annot=True)
-# plt.show()
-# sns.heatmap(corrVersicolor,annot=True)
-# plt.show()
-# sns.heatmap(corrVirginica,annot=True)
-# plt.show()
+irisVirginica = irisVirginica.drop(columns=['Id','Species','SepalWidthCm','PetalWidthCm'])
+
+# Atribuição das variáveis para a matrix da correlação
+corrSetosa = irisSetosa.corr()
+corrVersicolor = irisVersicolor.corr()
+corrVirginica = irisVirginica.corr()
+
+sns.heatmap(corrSetosa,annot=True)
+plt.show()
+sns.heatmap(corrVersicolor,annot=True)
+plt.show()
+sns.heatmap(corrVirginica,annot=True)
+plt.show()
+
+# Após a realização das análises, podemos constatar que a correlação entre o comprimento da pétala e o comprimento da sépala da espécie Iris-Setosa é fraca, quase neutra.
+# Já para as espécies Iris-Versicolo e Iris-Virginica, temos uma correlação forte, que indica a linearidade entre as duas grandezas, quando aumentamos os valores de um eixo (comprimento da pétala), o outro também tende a aumentar (comprimento da sépala)
