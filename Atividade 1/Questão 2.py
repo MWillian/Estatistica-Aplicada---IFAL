@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # Há uma correlação significativa entre o comprimento da sépala e o comprimento da pétala ?
 
 
-iris = pd.read_csv('Atividade 1 - 21/09/2024/Iris.csv')
+iris = pd.read_csv('Atividade 1/Iris.csv')
 
 # Filtro das colunas das espéciespip sh
 

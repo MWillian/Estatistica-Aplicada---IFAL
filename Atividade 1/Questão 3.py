@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 # Podemos checar a normalidade dos conjuntos dados por meio do teste de Shapiro-Wilk, e com uma análise visual utilizando o histograma.
 
-iris = pd.read_csv('Atividade 1 - 21/09/2024/Iris.csv')
+iris = pd.read_csv('Atividade 1/Iris.csv')
 
 irisSetosa = iris[iris['Species'] == 'Iris-setosa']
 irisVersicolor = iris[iris['Species'] == 'Iris-versicolor']

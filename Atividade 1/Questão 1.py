@@ -4,7 +4,7 @@ import pandas as pd
 
 #Qual das espécies tem a maior média de comprimento de pétala ?
 
-iris = pd.read_csv('Atividade 1 - 21/09/2024/Iris.csv')
+iris = pd.read_csv('Atividade 1/Iris.csv')
 
 # Filtro das espécies, atribuindo à variável as colunas numéricas do data frame
 irisSetosa = iris[iris['Species'] == 'Iris-setosa']
