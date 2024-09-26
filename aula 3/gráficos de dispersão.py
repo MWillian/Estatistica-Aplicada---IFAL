@@ -44,7 +44,7 @@ y_SepalWidth = iris['SepalWidthCm']
 # print(stts.spearmanr(x_SepalLength,y_SepalWidth)) #coeficiente de correlação
 
 
-# Teste paramétrico de Pearson,deve ser utilizado somente para os conjuntos de distribuição normal.
+# Teste paramétrico de Pearson, deve ser utilizado somente para os conjuntos de distribuição normal.
 
 # É possível verificar o valor-p e o coeficiente de correlação de Pearson.
 # Esse coeficiente exprime o grau de correlação entre -1 e 1.

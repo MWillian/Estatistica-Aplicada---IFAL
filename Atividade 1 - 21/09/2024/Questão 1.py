@@ -12,7 +12,7 @@ irisVersicolor = iris[iris['Species'] == 'Iris-versicolor']
 irisVirginica = iris[iris['Species'] == 'Iris-virginica']
 
 
-# Atribuição dos dados da pétala de cada espécies
+# Atribuição dos dados da pétala de cada espécie
 comprimentoPetalaSetosa = irisSetosa['PetalLengthCm']
 comprimentoPetalaVersicolor = irisVersicolor['PetalLengthCm']
 comprimentoPetalaVirginica = irisVirginica['PetalLengthCm']
