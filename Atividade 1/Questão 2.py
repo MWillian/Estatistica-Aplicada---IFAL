@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # Há uma correlação significativa entre o comprimento da sépala e o comprimento da pétala ?
 
 
-iris = pd.read_csv('Iris.csv')
+iris = pd.read_csv('Atividade 1 - 21/09/2024/Iris.csv')
 
 # Filtro das colunas das espéciespip sh
 
@@ -27,7 +27,6 @@ versicolorSepalLength = irisVersicolor['SepalLengthCm']
 virginicaSepalLength = irisVirginica['SepalLengthCm']
 
 
-# Checando a normalidade de cada conjunto de dados de cada espécie para decidir entre qual o melhor teste de coeficiente de correlação utilizar (Spearman ou Pearson)
 
 print("P-valor para a espécie Iris-Setosa: ")
 stat, p = scipy.stats.shapiro(setosaPetalLength)
@@ -50,13 +49,13 @@ print(f"Comprimento da Sépala = {p}\n")
 # Como todos os conjuntos apresentam p>0.05, não podemos rejeitar a hipótese nula, então consideramos os conjuntos com distribuição normal.
 # Logo, para que possamos verificar o coeficiente de correlação entre esses conjuntos, utilizaremos o teste paramétrico de Pearson.
 
-corr,p = stts.pearsonr(setosaPetalLength,setosaSepalLength)
+corr,p = stts.pearsonr(setosaSepalLength,setosaPetalLength)
 print(f"Coeficiente de correlação para Iris-Setosa: {corr}")
 
-corr,p = stts.pearsonr(versicolorPetalLength,versicolorSepalLength)
+corr,p = stts.pearsonr(versicolorSepalLength,versicolorPetalLength)
 print(f"Coeficiente de correlação para Iris-Versicolor: {corr}")
 
-corr,p = stts.pearsonr(virginicaPetalLength,virginicaSepalLength)
+corr,p = stts.pearsonr(virginicaSepalLength,virginicaPetalLength)
 print(f"Coeficiente de correlação para Iris-Virginica: {corr}\n")
 
 
@@ -64,15 +63,18 @@ print(f"Coeficiente de correlação para Iris-Virginica: {corr}\n")
 
 # Gráfico de correlação para a espécie Setosa
 
-sns.scatterplot(data=irisSetosa,x = irisSetosa['SepalLengthCm'],y = irisSetosa['PetalLengthCm'])# indica uma correlação fraca positiva (0.26)
+sns.scatterplot(data=irisSetosa,x = irisSetosa['SepalLengthCm'],y = irisSetosa['PetalLengthCm'])
+# indica uma correlação fraca positiva (0.26)
 plt.show() 
 
-#gráfico de correlação para a espécie Versicolor
-sns.scatterplot(data=irisVersicolor,x = irisVersicolor['SepalLengthCm'],y = irisVersicolor['PetalLengthCm'])# indica uma correlação forte positiva (0.75)
+# Gráfico de correlação para a espécie Versicolor
+sns.scatterplot(data=irisVersicolor,x = irisVersicolor['SepalLengthCm'],y = irisVersicolor['PetalLengthCm'])
+# indica uma correlação forte positiva (0.75)
 plt.show()
 
-#gráfico de correlação para a espécie Virginica
-sns.scatterplot(data=irisVirginica,x = irisVirginica['SepalLengthCm'],y = irisVirginica['PetalLengthCm'])# indica uma correlação forte positiva (0.86)
+# Gráfico de correlação para a espécie Virginica
+sns.scatterplot(data=irisVirginica,x = irisVirginica['SepalLengthCm'],y = irisVirginica['PetalLengthCm'])
+# indica uma correlação forte positiva (0.86)
 plt.show()
 
 # Também podemos utilizar a ferramenta HeatMap para uma melhor visualização dos índices de correlação das espécies.
